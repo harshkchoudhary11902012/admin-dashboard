@@ -35,18 +35,8 @@ const Onboarding = ({ onBoardingState, updateState }: OnBoardingProps) => {
     console.log("Onboarding");
 
     return (
-        <Stack align="center" justify="center" style={{ height: "100vh" }}>
-            <Group>
-                {onBoardingState !== true && onBoardingState !== false ? (
-                    <Stepper active={onBoardingState - 1} orientation="vertical" color="orange">
-                        <Stepper.Step label="System Mode"></Stepper.Step>
-                        <Stepper.Step label="Authentication"></Stepper.Step>
-                        <Stepper.Step label="Database"></Stepper.Step>
-                        <Stepper.Step label="Devices"></Stepper.Step>
-                        <Stepper.Step label="Connection"></Stepper.Step>
-                        <Stepper.Step label="Titles"></Stepper.Step>
-                    </Stepper>
-                ) : null}
+        <Stack style={{ height: "100vh" }}>
+            <Group wrap="nowrap">
                 <Container size={800} style={{ minWidth: 650 }}>
                     {onBoardingState === 1 ? (
                         <OBPage1 next={nextStep} prev={prevStep} clientMode={clientMode}></OBPage1>
@@ -64,6 +54,25 @@ const Onboarding = ({ onBoardingState, updateState }: OnBoardingProps) => {
                         <OBWelcome next={nextStep} prev={prevStep}></OBWelcome>
                     )}
                 </Container>
+                {onBoardingState !== true && onBoardingState !== false ? (
+                    <Stack
+                        align="center"
+                        justify="center"
+                        bg={"#000"}
+                        c={"#f7f7f7"}
+                        p={45}
+                        h={"100vh"}
+                    >
+                        <Stepper active={onBoardingState - 1} orientation="vertical" color="orange">
+                            <Stepper.Step label="System Mode"></Stepper.Step>
+                            <Stepper.Step label="Authentication"></Stepper.Step>
+                            <Stepper.Step label="Database"></Stepper.Step>
+                            <Stepper.Step label="Devices"></Stepper.Step>
+                            <Stepper.Step label="Connection"></Stepper.Step>
+                            <Stepper.Step label="Titles"></Stepper.Step>
+                        </Stepper>
+                    </Stack>
+                ) : null}
             </Group>
         </Stack>
     );

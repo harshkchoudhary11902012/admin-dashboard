@@ -1,33 +1,21 @@
-import { Button, Center, Text } from "@mantine/core";
+import { Button, Center, Stack, Text, Image } from "@mantine/core";
+import { IconArrowRight } from "@tabler/icons-react";
 import React from "react";
+import Logo from "../../logo2.png";
 
 const OBWelcome = ({ next }: OBPageProps) => {
     return (
-        <React.Fragment>
-            <h1>
-                Welcome to{" "}
-                <Text
-                    component="span"
-                    variant="gradient"
-                    gradient={{ from: "blue", to: "cyan" }}
-                    inherit
-                >
-                    Libratherm
-                </Text>{" "}
-                Data Logging System
-            </h1>
-            <Center>
-                <Button
-                    variant="gradient"
-                    gradient={{ from: "blue", to: "cyan" }}
-                    size="xl"
-                    radius="xl"
-                    onClick={() => next()}
-                >
-                    Let's Begin
+        <Center h={550}>
+            <Stack align="center" justify="center" gap={"xl"}>
+                <Image src={Logo} w={500} h={150} />
+                <Text fz={42} fw={600} ta={"center"}>
+                    Welcome to the Renovaite AI
+                </Text>
+                <Button color={"#209f9e"} radius={32} h={40} onClick={() => next()}>
+                    Get Started {<IconArrowRight />}
                 </Button>
-            </Center>
-        </React.Fragment>
+            </Stack>
+        </Center>
     );
 };
 
