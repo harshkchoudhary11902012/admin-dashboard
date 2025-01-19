@@ -6,7 +6,7 @@ const options: SystemMode[] = ["MASTER", "CLIENT"];
 const OBPage1 = ({ next, prev }: OBPageProps) => {
     return (
         <>
-            <Title order={1}>Let's get started</Title>
+            <Title order={1}>Let's get started harsh</Title>
             <Paper>
                 <form>
                     <Stack>

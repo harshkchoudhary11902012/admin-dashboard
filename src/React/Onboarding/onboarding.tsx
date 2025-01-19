@@ -63,7 +63,12 @@ const Onboarding = ({ onBoardingState, updateState }: OnBoardingProps) => {
                         p={45}
                         h={"100vh"}
                     >
-                        <Stepper active={onBoardingState - 1} orientation="vertical" color="orange">
+                        <Stepper
+                            active={onBoardingState - 1}
+                            orientation="vertical"
+                            color="orange"
+                            size="xs"
+                        >
                             <Stepper.Step label="System Mode"></Stepper.Step>
                             <Stepper.Step label="Authentication"></Stepper.Step>
                             <Stepper.Step label="Database"></Stepper.Step>
